@@ -1,0 +1,48 @@
+@import 'variables';
+
+.nav {
+  ul {
+    user-select: none;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    li {
+      a {
+        margin-right: 36px;
+        padding: 11px 16px 10px;
+        color: $Cnav;
+
+        &:hover {
+          color: $Cblue;
+        }
+      }
+    }
+  }
+}
+
+.footerNav {
+  ul {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    list-style: none;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+
+    li {
+      a {
+        color: $Cnav;
+
+        &:hover {
+          color: $Cblue;
+        }
+      }
+    }
+  }
+}

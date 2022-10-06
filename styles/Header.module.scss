@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'mixins';
+
+.header {
+  border: 1px solid $Cprimary;
+  background-color: #fff;
+
+  header {
+    min-height: 80px;
+    max-width: 1120px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include primaryFont();
+  }
+}

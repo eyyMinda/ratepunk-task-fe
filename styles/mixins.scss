@@ -1,0 +1,27 @@
+@mixin primaryFont($fsize: 20px, $fweight: 400, $lheight: 32px) {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: $fsize;
+  font-weight: $fweight;
+  line-height: $lheight;
+}
+
+@mixin secondaryFont($fsize: 32px, $fweight: 400, $lheight: 48px) {
+  font-family: 'Caveat Brush', cursive;
+  font-size: $fsize;
+  font-weight: $fweight;
+  line-height: $lheight;
+}
+
+@mixin tertiaryFont($fsize: 20px, $fweight: 700, $lheight: 16px) {
+  font-family: 'Gadugi', sans-serif;
+  font-size: $fsize;
+  font-weight: $fweight;
+  line-height: $lheight;
+}
+
+@mixin flex($horizontal: center, $vertical: center, $fdir: row) {
+  display: flex;
+  flex-direction: $fdir;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}

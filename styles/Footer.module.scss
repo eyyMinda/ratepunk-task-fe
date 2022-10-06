@@ -1,0 +1,58 @@
+@import 'variables';
+@import 'mixins';
+
+.footer {
+  background-color: $Cfooter;
+  border: 1px solid $Cprimary;
+
+  footer {
+    margin: auto;
+    width: 1120px;
+    height: 348px;
+    color: $Cprimary;
+    display: flex;
+    justify-content: space-between;
+    margin: 64px auto 0;
+    @include primaryFont(16px, 400, 24px);
+
+    h3 {
+      @include primaryFont(20px, 700, 24px);
+    }
+
+    article {
+      max-width: 544px;
+      padding: 15px 0 0;
+
+      p {
+        margin: 32px 0 46px;
+      }
+
+      description {
+        color: $Cmisc;
+      }
+    }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 110px;
+
+      .socialBoxes {
+        display: flex;
+        gap: 8px;
+
+        div {
+          width: 32px;
+          height: 32px;
+          background-color: $Cblue;
+          border: 1px solid $Cprimary;
+          border-radius: 8px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
