@@ -6,7 +6,10 @@ function Header() {
   return (
     <div className={headerStyles.header}>
       <header>
-        <Image src="/logo.svg" alt="RatePunk Logo" width={125} height={32} />
+        <a href='/'>
+          <Image style={{ cursor: 'pointer' }} src="/logo.svg"
+            alt="RatePunk Logo" width={125} height={32} />
+        </a>
         <HeaderNav />
       </header>
     </div>

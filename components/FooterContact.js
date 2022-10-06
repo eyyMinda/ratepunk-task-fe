@@ -12,13 +12,13 @@ function FooterContact() {
       </div>
       <div>
         <h3>SOCIAL</h3>
-        <div className={footerStyles.socialBoxes}>
-          <div><Image src='/instagram.svg' alt="email icon" width={16} height={16} /></div>
-          <div><Image src='/facebook.svg' alt="email icon" width={16} height={16} /></div>
-          <div><Image src='/linkedin.svg' alt="email icon" width={16} height={16} /></div>
-          <div><Image src='/twitter.svg' alt="email icon" width={16} height={16} /></div>
-          <div><Image src='/tiktok.svg' alt="email icon" width={16} height={16} /></div>
-        </div>
+        <ul className={footerStyles.socialBoxes}>
+          <li><a href='#'><Image src='/instagram.svg' alt="email icon" width={16} height={16} /></a></li>
+          <li><a href='#'><Image src='/facebook.svg' alt="email icon" width={16} height={16} /></a></li>
+          <li><a href='#'><Image src='/linkedin.svg' alt="email icon" width={16} height={16} /></a></li>
+          <li><a href='#'><Image src='/twitter.svg' alt="email icon" width={16} height={16} /></a></li>
+          <li><a href='#'><Image src='/tiktok.svg' alt="email icon" width={16} height={16} /></a></li>
+        </ul>
       </div>
     </div>
   )

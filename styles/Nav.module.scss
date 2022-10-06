@@ -1,12 +1,11 @@
 @import 'variables';
+@import 'mixins';
 
 .nav {
   ul {
+    @include flex(space-between);
     user-select: none;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
     li {
       a {
@@ -24,16 +23,12 @@
 
 .footerNav {
   ul {
+    @include flex(space-between, flex-start, column);
+    gap: 16px;
     margin: 0;
     padding: 0;
     user-select: none;
     list-style: none;
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 16px;
 
     li {
       a {

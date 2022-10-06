@@ -21,7 +21,7 @@
 
 @mixin flex($horizontal: center, $vertical: center, $fdir: row) {
   display: flex;
-  flex-direction: $fdir;
   justify-content: $horizontal;
   align-items: $vertical;
+  flex-direction: $fdir;
 }

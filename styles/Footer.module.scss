@@ -6,14 +6,13 @@
   border: 1px solid $Cprimary;
 
   footer {
+    @include primaryFont(16px, 400, 24px);
+    @include flex(space-between, flex-start);
     margin: auto;
     width: 1120px;
     height: 348px;
     color: $Cprimary;
-    display: flex;
-    justify-content: space-between;
     margin: 64px auto 0;
-    @include primaryFont(16px, 400, 24px);
 
     h3 {
       @include primaryFont(20px, 700, 24px);
@@ -33,24 +32,27 @@
     }
 
     .contacts {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding-bottom: 110px;
+      @include flex(space-between, flex-start, column);
+      min-height: 100%;
+      padding-bottom: 85px;
 
       .socialBoxes {
+        padding: 0;
         display: flex;
         gap: 8px;
 
-        div {
-          width: 32px;
-          height: 32px;
-          background-color: $Cblue;
-          border: 1px solid $Cprimary;
-          border-radius: 8px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        li {
+          list-style: none;
+
+          a {
+            @include flex();
+            width: 32px;
+            height: 32px;
+            background-color: $Cblue;
+            border: 1px solid $Cprimary;
+            border-radius: 8px;
+            cursor: pointer;
+          }
         }
       }
     }

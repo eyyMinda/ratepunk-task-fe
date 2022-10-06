@@ -6,12 +6,10 @@
   background-color: #fff;
 
   header {
+    @include primaryFont();
+    @include flex(space-between);
     min-height: 80px;
     max-width: 1120px;
     margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @include primaryFont();
   }
 }
