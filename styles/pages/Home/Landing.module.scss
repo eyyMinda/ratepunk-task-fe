@@ -1,0 +1,82 @@
+@import '../../z_variables';
+@import '../../z_mixins';
+
+.landing {
+  min-width: 100%;
+  background-color: $Clanding;
+  border: 1px solid $Cprimary;
+
+  .landing_container {
+    @include screenW();
+    @include flex();
+    min-height: 925px;
+    margin: 0 auto;
+    padding: 64px 32px;
+
+    .formCard {
+      padding: 64px;
+      background-color: $Cfooter;
+      color: $Cprimary;
+      border: 1px solid $Cprimary;
+      border-radius: 16px;
+      margin-right: 64px;
+
+      h1 {
+        @include secondaryFont(48px, 400, 72px);
+      }
+
+      p {
+        margin: 32px 0;
+      }
+
+      form {
+        div {
+          position: relative;
+          min-width: 100%;
+          border: 1px solid $Cprimary;
+          border-radius: 8px;
+          padding: 20px;
+          background-color: #fff;
+          // line-height: 30px;
+          height: 100%;
+
+          input {
+            width: 80%;
+            height: 100%;
+            outline: none;
+            background-color: #fff;
+            color: $Cprimary;
+            border: 0;
+            margin-left: 20px;
+            padding: 5px;
+            @include primaryFont(20px, 400, 20px);
+          }
+        }
+      }
+    }
+
+    .steps {
+      @include flex(center, space-between, column);
+      margin-left: 64px;
+
+      .step {
+        @include flex();
+
+        div {
+          @include flex(space-between, flex-start, column);
+          color: $Cprimary;
+
+          b {
+            color: $Cblue;
+          }
+
+          h2 {
+            @include secondaryFont();
+          }
+
+          p {}
+        }
+      }
+    }
+  }
+}

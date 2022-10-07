@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import footerStyles from '../styles/Footer.module.scss';
 
 function FooterContact() {
@@ -13,11 +12,11 @@ function FooterContact() {
       <div>
         <h3>SOCIAL</h3>
         <ul className={footerStyles.socialBoxes}>
-          <li><a href='#'><Image src='/instagram.svg' alt="email icon" width={16} height={16} /></a></li>
-          <li><a href='#'><Image src='/facebook.svg' alt="email icon" width={16} height={16} /></a></li>
-          <li><a href='#'><Image src='/linkedin.svg' alt="email icon" width={16} height={16} /></a></li>
-          <li><a href='#'><Image src='/twitter.svg' alt="email icon" width={16} height={16} /></a></li>
-          <li><a href='#'><Image src='/tiktok.svg' alt="email icon" width={16} height={16} /></a></li>
+          <li><a href='#'><Image src='/instagram.svg' alt="instagram icon" width={16} height={16} /></a></li>
+          <li><a href='#'><Image src='/facebook.svg' alt="facebook icon" width={16} height={16} /></a></li>
+          <li><a href='#'><Image src='/linkedin.svg' alt="linkedin icon" width={16} height={16} /></a></li>
+          <li><a href='#'><Image src='/twitter.svg' alt="twitter icon" width={16} height={16} /></a></li>
+          <li><a href='#'><Image src='/tiktok.svg' alt="tiktok icon" width={16} height={16} /></a></li>
         </ul>
       </div>
     </div>

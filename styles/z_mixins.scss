@@ -25,3 +25,7 @@
   align-items: $vertical;
   flex-direction: $fdir;
 }
+
+@mixin screenW($screenW: 1184px) {
+  max-width: $screenW;
+}

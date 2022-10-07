@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@import 'z_variables';
+@import 'z_mixins';
 
 .header {
   border: 1px solid $Cprimary;
@@ -8,8 +8,9 @@
   header {
     @include primaryFont();
     @include flex(space-between);
+    @include screenW();
     min-height: 80px;
-    max-width: 1120px;
     margin: auto;
+    padding: 0 32px;
   }
 }

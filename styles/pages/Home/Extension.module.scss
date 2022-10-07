@@ -1,0 +1,58 @@
+@import '../../z_variables';
+@import '../../z_mixins';
+
+.app {
+  min-width: 100%;
+  background-color: $Cextension;
+  border: 1px solid $Cprimary;
+
+  .app_container {
+    @include flex(flex-start);
+    @include screenW();
+    padding: 32px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    @media (max-width: $medium) {
+      @include flex(center, center, column);
+    }
+
+    .box {
+      @include flex(flex-start, flex-end);
+      border: 1px solid $Cprimary;
+      border-radius: 16px;
+      padding: 14px 32px 16px 24px;
+      gap: 20px;
+      width: 312px;
+      height: 80px;
+      white-space: nowrap;
+
+      div {
+        @include flex(flex-end, flex-start, column);
+
+        small {
+          line-height: 16px;
+        }
+
+        big {
+          @include tertiaryFont(20px, 700);
+        }
+      }
+    }
+
+    .rating {
+      @include flex();
+      gap: 16px;
+      white-space: nowrap;
+
+      i {
+        padding-left: 4px;
+      }
+
+      big {
+        line-height: 24px;
+      }
+    }
+  }
+}

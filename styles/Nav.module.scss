@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@import 'z_variables';
+@import 'z_mixins';
 
 .nav {
   ul {
@@ -22,6 +22,12 @@
 }
 
 .footerNav {
+  padding: 0 16px;
+
+  @media (max-width: $medium) {
+    padding: 16px 0;
+  }
+
   ul {
     @include flex(space-between, flex-start, column);
     gap: 16px;
@@ -29,6 +35,7 @@
     padding: 0;
     user-select: none;
     list-style: none;
+    white-space: nowrap;
 
     li {
       a {

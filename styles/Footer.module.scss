@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@import 'z_variables';
+@import 'z_mixins';
 
 .footer {
   background-color: $Cfooter;
@@ -8,33 +8,50 @@
   footer {
     @include primaryFont(16px, 400, 24px);
     @include flex(space-between, flex-start);
-    margin: auto;
-    width: 1120px;
-    height: 348px;
+    @include screenW();
+    margin: 64px auto 58px;
     color: $Cprimary;
-    margin: 64px auto 0;
+    padding: 0 32px;
+
+    @media (max-width: $medium) {
+      @include flex(center, flex-start, column);
+      min-height: 867px;
+      margin: 0;
+      padding: 48px 32px;
+    }
 
     h3 {
       @include primaryFont(20px, 700, 24px);
+    }
+
+    .copy {
+      color: $Cmisc;
+      font-size: 16px;
+      text-align: start;
     }
 
     article {
       max-width: 544px;
       padding: 15px 0 0;
 
+
       p {
         margin: 32px 0 46px;
-      }
 
-      description {
-        color: $Cmisc;
+        @media (max-width: $medium) {
+          margin: 32px 0 30px;
+        }
       }
     }
 
     .contacts {
       @include flex(space-between, flex-start, column);
-      min-height: 100%;
-      padding-bottom: 85px;
+      min-height: 260px;
+
+      @media (max-width: $medium) {
+        padding-bottom: 0px;
+        min-height: auto;
+      }
 
       .socialBoxes {
         padding: 0;
