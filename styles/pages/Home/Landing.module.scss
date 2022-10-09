@@ -57,10 +57,21 @@
         }
 
         div {
+          position: relative;
           background-color: #fff;
           border: 1px solid $Cprimary;
           border-radius: 8px;
           padding: 20px;
+          margin-top: 16px;
+
+          &.ref {
+            color: $Cmisc;
+
+            @media (min-width: $mainScreen) {
+              @include flex(space-between);
+              padding: 0 0 0 20px;
+            }
+          }
 
           input {
             @include primaryFont(20px, 400, 20px);
@@ -86,6 +97,23 @@
           border-radius: 8px;
           width: 100%;
           margin: 16px 0;
+        }
+
+        .copy {
+          margin: 0 0 0 18px;
+          padding: 19px 24px 18px;
+
+          @media (max-width: $mainScreen) {
+            display: none;
+          }
+        }
+
+        .copySmall {
+          display: none;
+
+          @media (max-width: $mainScreen) {
+            display: block;
+          }
         }
       }
 

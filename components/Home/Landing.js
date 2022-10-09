@@ -26,26 +26,44 @@ function Landing() {
     axios.put(jsonbin, data, axiosHeaders);
   }
 
+  const copy = e => {
+    e.preventDefault();
+    const referral = 'https://ratepunk.com/referral';
+    navigator.clipboard.writeText(referral);
+  }
+
   return (
     <div id='landing' className={landingStyles.landing}>
       <div className={landingStyles.landing_container}>
+
+        {/*///////////////// FORM //////////////// */}
         <div className={landingStyles.formCard}>
           <h1>REFER FRIENDS AND GET REWARDS</h1>
           <p>Refer your friends to us and earn hotel booking vouchers. We'll give you 1 coin for each friend that installs our extension. Minimum cash-out at 20 coins.</p>
+
           <form>
-            {msg.type === 'error' ? <span className={landingStyles.msgErr}>{msg.text}</span> : null}
-            {msg.type === 'success' ? (<span className={landingStyles.msg}>
-              <Image src='/success.svg' alt="success icon" width={32} height={32} /> {msg.text}
-            </span>) :
+            {/*//////////Display Messages///////// */}
+            {msg.type === 'error' ? <span className={landingStyles.msgErr}>{msg.text}</span> :
+              msg.type === 'success' ? (<span className={landingStyles.msg}>
+                <Image src='/success.svg' alt="success icon" width={32} height={32} /> {msg.text}
+              </span>) : null}
+            {/*//////////Input with Copy Btn//////// */}
+            {msg.type === 'success' ? <div className={landingStyles.ref}>https://ratepunk.com/referral
+              <button className={landingStyles.copy} onClick={copy}>Copy</button></div> :
               <div>
                 <Image src='/email.svg' alt="email icon" width={20} height={16} />
-                <input type='email' value={lastEmail} onChange={e => setLastEmail(e.target.value)} placeholder='Enter your email address' />
-              </div>
-            }
-            <button onClick={submit}>Get Referral Link</button>
+                <input type='email' value={lastEmail} onChange={e => setLastEmail(e.target.value)}
+                  placeholder='Enter your email address' />
+              </div>}
+            {/*///////////Copy Btn for Mobile///////// */}
+            {msg.type === 'success' ? <button className={landingStyles.copySmall}
+              onClick={copy}>Copy URL</button> :
+              <button onClick={submit}>Get Referral Link</button>}
           </form>
           <small>Limits on max rewards apply.</small>
         </div>
+
+        {/*///////////////// STEPS //////////////// */}
         <div className={landingStyles.steps}>
           <div className={landingStyles.step}>
             <div className={landingStyles.img}>
