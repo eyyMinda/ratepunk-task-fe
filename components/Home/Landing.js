@@ -1,7 +1,15 @@
 import Image from "next/image";
+import { useState } from "react";
 import landingStyles from '../../styles/pages/Home/Landing.module.scss';
 
 function Landing() {
+  const [email, setEmail] = useState('');
+
+  const submit = e => {
+    e.preventDefault()
+    console.log(email);
+  }
+
   return (
     <div id='landing' className={landingStyles.landing}>
       <div className={landingStyles.landing_container}>
@@ -11,9 +19,9 @@ function Landing() {
           <form>
             <div>
               <Image src='/email.svg' alt="email icon" width={20} height={16} />
-              <input type='email' placeholder='Enter your email address' />
+              <input type='email' value={email} onChange={e => setEmail(e.target.value)} placeholder='Enter your email address' />
             </div>
-            <button>Get Referral Link</button>
+            <button onClick={submit}>Get Referral Link</button>
           </form>
           <small>Limits on max rewards apply.</small>
         </div>

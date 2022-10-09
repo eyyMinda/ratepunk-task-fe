@@ -86,12 +86,12 @@
     }
 
     .steps {
-      @include flex(center, space-between, column);
+      margin-top: 20px;
       margin-left: 64px;
 
       @media (max-width: $mainScreen) {
         margin: 48px;
-        align-items: flex-start;
+        @include flex(center, flex-start, column);
       }
 
       @media (max-width: $medium) {
@@ -126,7 +126,6 @@
         .stepInfo {
           @include flex(center, flex-start, column);
           color: $Cprimary;
-          margin-bottom: 64px;
 
           &:nth-of-type(even) {
             margin-left: 56px;
@@ -137,10 +136,9 @@
           }
 
           @media (max-width: $medium) {
-            &:nth-of-type(1n) {
-              margin: 0;
-              align-items: center;
-            }
+            margin-bottom: 64px;
+            margin: 0;
+            align-items: center;
           }
 
           b {
