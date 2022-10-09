@@ -6,6 +6,7 @@
   border: 1px solid $Cprimary;
 
   footer {
+    position: relative;
     @include primaryFont(16px, 400, 24px);
     @include flex(space-between, flex-start);
     @include screenW();
@@ -22,12 +23,6 @@
 
     h3 {
       @include primaryFont(20px, 700, 24px);
-    }
-
-    .copy {
-      color: $Cmisc;
-      font-size: 16px;
-      text-align: start;
     }
 
     article {
@@ -71,6 +66,17 @@
             cursor: pointer;
           }
         }
+      }
+    }
+
+    .copy {
+      color: $Cmisc;
+      font-size: 16px;
+      text-align: start;
+
+      @media (max-width: $medium) {
+        position: absolute;
+        bottom: 48px;
       }
     }
   }
