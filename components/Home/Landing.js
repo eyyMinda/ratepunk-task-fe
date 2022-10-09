@@ -1,6 +1,7 @@
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
+import { validateEmail } from "../../functions/validateEmail";
 import landingStyles from '../../styles/pages/Home/Landing.module.scss';
 
 const jsonbin = 'https://api.jsonbin.io/v3/b/6342c3210e6a79321e227306';
@@ -18,10 +19,11 @@ function Landing() {
 
   const submit = e => {
     e.preventDefault()
+    const { text, type } = validateEmail(lastEmail);
+    setMsg({ text, type });
+    if (type === 'error') return;
     const data = JSON.stringify({ lastEmail });
-    axios.put(jsonbin, data, axiosHeaders).then(res => {
-      setMsg({ text: 'Your email is confirmed!', type: 'success' });
-    });
+    axios.put(jsonbin, data, axiosHeaders);
   }
 
   return (
