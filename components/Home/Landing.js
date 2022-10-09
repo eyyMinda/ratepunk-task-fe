@@ -39,7 +39,7 @@ function Landing() {
         {/*///////////////// FORM //////////////// */}
         <div className={landingStyles.formCard}>
           <h1>REFER FRIENDS AND GET REWARDS</h1>
-          <p>Refer your friends to us and earn hotel booking vouchers. We'll give you 1 coin for each friend that installs our extension. Minimum cash-out at 20 coins.</p>
+          <p>Refer your friends to us and earn hotel booking vouchers. We&apos;ll give you 1 coin for each friend that installs our extension. Minimum cash-out at 20 coins.</p>
 
           <form>
             {/*//////////Display Messages///////// */}

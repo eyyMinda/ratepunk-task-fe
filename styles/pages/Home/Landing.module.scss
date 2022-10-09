@@ -66,6 +66,7 @@
 
           &.ref {
             color: $Cmisc;
+            font-size: 18px;
 
             @media (min-width: $mainScreen) {
               @include flex(space-between);
@@ -174,9 +175,11 @@
           }
 
           @media (max-width: $medium) {
-            margin-bottom: 64px;
-            margin: 0;
-            align-items: center;
+            &:nth-of-type(1n) {
+              margin: 0;
+              align-items: center;
+              margin-top: 32px;
+            }
           }
 
           b {
