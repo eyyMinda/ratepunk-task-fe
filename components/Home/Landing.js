@@ -1,13 +1,27 @@
+import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 import landingStyles from '../../styles/pages/Home/Landing.module.scss';
 
+const jsonbin = 'https://api.jsonbin.io/v3/b/6342c3210e6a79321e227306';
+const token = '$2b$10$7aVmVzUhEWgpa7IxiTztfO/GZJbAj7AcvDsj.73jCCLuO4d13iNwi'
+const axiosHeaders = {
+  headers: {
+    "Content-Type": "application/json",
+    "X-Master-Key": token
+  }
+};
+
 function Landing() {
-  const [email, setEmail] = useState('');
+  const [lastEmail, setLastEmail] = useState('');
+  const [msg, setMsg] = useState({});
 
   const submit = e => {
     e.preventDefault()
-    console.log(email);
+    const data = JSON.stringify({ lastEmail });
+    axios.put(jsonbin, data, axiosHeaders).then(res => {
+      setMsg({ text: 'Your email is confirmed!', type: 'success' });
+    });
   }
 
   return (
@@ -17,10 +31,15 @@ function Landing() {
           <h1>REFER FRIENDS AND GET REWARDS</h1>
           <p>Refer your friends to us and earn hotel booking vouchers. We'll give you 1 coin for each friend that installs our extension. Minimum cash-out at 20 coins.</p>
           <form>
-            <div>
-              <Image src='/email.svg' alt="email icon" width={20} height={16} />
-              <input type='email' value={email} onChange={e => setEmail(e.target.value)} placeholder='Enter your email address' />
-            </div>
+            {msg.type === 'error' ? <span className={landingStyles.msgErr}>{msg.text}</span> : null}
+            {msg.type === 'success' ? (<span className={landingStyles.msg}>
+              <Image src='/success.svg' alt="success icon" width={32} height={32} /> {msg.text}
+            </span>) :
+              <div>
+                <Image src='/email.svg' alt="email icon" width={20} height={16} />
+                <input type='email' value={lastEmail} onChange={e => setLastEmail(e.target.value)} placeholder='Enter your email address' />
+              </div>
+            }
             <button onClick={submit}>Get Referral Link</button>
           </form>
           <small>Limits on max rewards apply.</small>

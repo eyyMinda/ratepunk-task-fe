@@ -46,6 +46,16 @@
       form {
         margin-bottom: 120px;
 
+        .msgErr {
+          color: $Cerror;
+          font-size: 12px;
+        }
+
+        .msg {
+          @include flex(flex-start);
+          gap: 16px;
+        }
+
         div {
           background-color: #fff;
           border: 1px solid $Cprimary;
