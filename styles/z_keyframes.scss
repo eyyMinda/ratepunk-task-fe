@@ -1,0 +1,48 @@
+@keyframes menuCollapse {
+  100% {
+    position: relative;
+    top: 0;
+  }
+}
+
+.nav:not(.open) {
+  .bar1 {
+    top: 31px;
+    transform: rotate(0deg);
+    transition: transform 0.35s, top 0.45s 0.35s;
+  }
+
+  .bar2 {
+    transform: scale(100%);
+    transition: transform 0.35s 0.70s;
+  }
+
+  .bar3 {
+    top: 53px;
+    transform: rotate(0deg);
+    transition: transform 0.35s, top 0.45s 0.35s;
+  }
+}
+
+.nav.open {
+  .bar1 {
+    transform: rotate(45deg);
+    transition: top 0.45s, transform 0.35s 0.5s;
+    top: 42px;
+  }
+
+  .bar2 {
+    transform: scale(0%);
+    transition: transform 0.35s;
+  }
+
+  .bar3 {
+    transform: rotate(135deg);
+    transition: top 0.45s, transform 0.35s 0.5s;
+    top: 42px;
+  }
+
+  ul {
+    animation: menuCollapse 0.25s ease-in-out forwards;
+  }
+}

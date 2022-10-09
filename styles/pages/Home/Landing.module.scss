@@ -8,18 +8,32 @@
 
   .landing_container {
     @include screenW();
-    @include flex();
+    @include flex(center, flex-start);
     min-height: 925px;
     margin: 0 auto;
     padding: 64px 32px;
+    width: 100%;
+
+    @media (max-width: $mainScreen) {
+      flex-direction: column;
+      padding: 32px 0;
+      align-items: center;
+    }
 
     .formCard {
-      padding: 64px;
+      padding: 16px;
       background-color: $Cfooter;
       color: $Cprimary;
       border: 1px solid $Cprimary;
       border-radius: 16px;
-      margin-right: 64px;
+      width: 80%;
+
+      @media (min-width: $mainScreen) {
+        width: 100%;
+        margin-right: 64px;
+        margin-bottom: 0;
+        padding: 64px;
+      }
 
       h1 {
         @include secondaryFont(48px, 400, 72px);
@@ -30,28 +44,44 @@
       }
 
       form {
+        margin-bottom: 120px;
+
         div {
-          position: relative;
-          min-width: 100%;
+          background-color: #fff;
           border: 1px solid $Cprimary;
           border-radius: 8px;
           padding: 20px;
-          background-color: #fff;
-          // line-height: 30px;
-          height: 100%;
 
           input {
-            width: 80%;
-            height: 100%;
+            @include primaryFont(20px, 400, 20px);
             outline: none;
+            border: none;
             background-color: #fff;
             color: $Cprimary;
-            border: 0;
+            width: 85.5%;
             margin-left: 20px;
             padding: 5px;
-            @include primaryFont(20px, 400, 20px);
           }
         }
+
+        button {
+          cursor: pointer;
+          @include flex();
+          @include primaryFont(20px, 700, 32px);
+          white-space: nowrap;
+          background-color: $Cblue;
+          color: #fff;
+          padding: 20px 123px 17px;
+          border: 1px solid $Cprimary;
+          border-radius: 8px;
+          width: 100%;
+          margin: 16px 0;
+        }
+      }
+
+      small {
+        font-size: 16px;
+        color: $Cmisc;
       }
     }
 
@@ -59,22 +89,78 @@
       @include flex(center, space-between, column);
       margin-left: 64px;
 
-      .step {
-        @include flex();
+      @media (max-width: $mainScreen) {
+        margin: 48px;
+        align-items: flex-start;
+      }
 
-        div {
-          @include flex(space-between, flex-start, column);
+      @media (max-width: $medium) {
+        margin: 48px 0;
+      }
+
+      .step {
+        @include flex(center, space-between);
+
+        @media (max-width: $medium) {
+          flex-direction: column;
+        }
+
+        &:nth-of-type(even) {
+          margin: 48px 0;
+
+          .img {
+            order: 2;
+          }
+
+          .stepInfo {
+            @media (max-width: $mainScreen) {
+              order: 2;
+            }
+          }
+        }
+
+        .img {
+          @include flex();
+        }
+
+        .stepInfo {
+          @include flex(center, flex-start, column);
           color: $Cprimary;
+          margin-bottom: 64px;
+
+          &:nth-of-type(even) {
+            margin-left: 56px;
+          }
+
+          &:nth-of-type(odd) {
+            margin-right: 56px;
+          }
+
+          @media (max-width: $medium) {
+            &:nth-of-type(1n) {
+              margin: 0;
+              align-items: center;
+            }
+          }
 
           b {
             color: $Cblue;
+            letter-spacing: 1.6px;
           }
 
           h2 {
             @include secondaryFont();
+            margin: 16px 0;
           }
 
-          p {}
+          p {
+            margin: 0;
+
+            @media (max-width: $medium) {
+              max-width: 250px;
+              text-align: center;
+            }
+          }
         }
       }
     }

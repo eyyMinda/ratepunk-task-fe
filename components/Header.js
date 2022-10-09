@@ -10,7 +10,7 @@ function Header() {
         <Link href='/'>
           <a>
             <Image style={{ cursor: 'pointer' }} src="/logo.svg"
-              alt="RatePunk Logo" width={125} height={32} />
+              alt="RatePunk Logo" width={125} height={32} layout={'fixed'} />
           </a>
         </Link>
         <HeaderNav />

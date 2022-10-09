@@ -1,18 +1,23 @@
-import Link from 'next/link';
+import { useState } from 'react';
 import navStyles from '../styles/Nav.module.scss';
 
 function HeaderNav() {
+  const [active, setActive] = useState(false);
+
   return (
-    <nav className={navStyles.nav}>
-      <ul>
+    <nav className={active ? [navStyles.nav, navStyles.open].join(' ') : navStyles.nav} onClick={() => setActive(!active)}>
+      <div className={navStyles.bar1}></div>
+      <div className={navStyles.bar2}></div>
+      <div className={navStyles.bar3}></div>
+      <ul id="header__menu">
         <li>
-          <Link href='#extension'>Chrome Extension</Link>
+          <a href='#extension'>Chrome Extension</a>
         </li>
         <li>
-          <Link href='#'>Price Comparison</Link>
+          <a href='#'>Price Comparison</a>
         </li>
         <li>
-          <Link href='#'>Blog</Link>
+          <a href='#'>Blog</a>
         </li>
       </ul>
     </nav>

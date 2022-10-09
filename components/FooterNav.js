@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import navStyles from '../styles/Nav.module.scss';
 
 function FooterNav() {
@@ -7,19 +6,19 @@ function FooterNav() {
       <h3>QUICK LINKS</h3>
       <ul>
         <li>
-          <Link href='#'>Price Comparison</Link>
+          <a href='#'>Price Comparison</a>
         </li>
         <li>
-          <Link href='#extension'>Chrome Extension</Link>
+          <a href='#extension'>Chrome Extension</a>
         </li>
         <li>
-          <Link href='#'>How It Works</Link>
+          <a href='#'>How It Works</a>
         </li>
         <li>
-          <Link href='#'>Ratepunk Blog</Link>
+          <a href='#'>Ratepunk Blog</a>
         </li>
         <li>
-          <Link href='#'>Privacy Policy</Link>
+          <a href='#'>Privacy Policy</a>
         </li>
       </ul>
     </nav >

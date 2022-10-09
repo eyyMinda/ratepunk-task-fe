@@ -15,27 +15,34 @@ function Landing() {
             </div>
             <button>Get Referral Link</button>
           </form>
+          <small>Limits on max rewards apply.</small>
         </div>
         <div className={landingStyles.steps}>
           <div className={landingStyles.step}>
-            <Image src="/invite.svg" alt="Invite icon" width={128} height={140} />
-            <div>
+            <div className={landingStyles.img}>
+              <Image src="/invite.svg" alt="Invite icon" width={128} height={140} layout={'fixed'} />
+            </div>
+            <div className={landingStyles.stepInfo}>
               <b>STEP 1</b>
               <h2>INVITE FRIENDS</h2>
               <p>Refer friends with your unique referral link.</p>
             </div>
           </div>
           <div className={landingStyles.step}>
-            <div>
+            <div className={landingStyles.img}>
+              <Image src="/collect-coins.svg" alt="Collect coins icon" width={144} height={144} layout={'fixed'} />
+            </div>
+            <div className={landingStyles.stepInfo}>
               <b>STEP 2</b>
               <h2>COLLECT COINS</h2>
               <p>Get 1 coin for each friend that installs our extension using your referral link.</p>
             </div>
-            <Image src="/collect-coins.svg" alt="Collect coins icon" width={144} height={144} />
           </div>
           <div className={landingStyles.step}>
-            <Image src="/voucher.svg" alt="Voucher icon" width={144} height={107} />
-            <div>
+            <div className={landingStyles.img}>
+              <Image src="/voucher.svg" alt="Voucher icon" width={144} height={107} layout={'fixed'} />
+            </div>
+            <div className={landingStyles.stepInfo}>
               <b>STEP 3</b>
               <h2>GET VOUCHER</h2>
               <p>Redeem for a $20 hotel booking voucher once you collect 20 coins.</p>
