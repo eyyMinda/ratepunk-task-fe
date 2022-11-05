@@ -11,10 +11,11 @@ Instructions:
 - Use JSONBIN (https://jsonbin.io/) to save only the last entered email
 - Menu links can be empty
 - Social links can be empty
-[Chrome store link: https://chrome.google.com/webstore/detail/ratepunk-same-hotel-way-c/gdaioanblcnghddimngklkhgcbomfdck?utm_source=ratepunk]
-[Apple store link: https://apps.apple.com/app/ratepunk/id1607823726]
+[
+  -Chrome store link: (https://chrome.google.com/webstore/detail/ratepunk-same-hotel-way-c/gdaioanblcnghddimngklkhgcbomfdck?utm_source=ratepunk)
+  -Apple store link: (https://apps.apple.com/app/ratepunk/id1607823726)
+]
 
 - Publish finished task to github repo
 
-
-[Reference: https://xd.adobe.com/view/71b314b1-abe5-4705-8721-c8608a7eb26d-24e0/]
+[Reference Link] (https://xd.adobe.com/view/71b314b1-abe5-4705-8721-c8608a7eb26d-24e0/)
