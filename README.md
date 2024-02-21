@@ -2,9 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, clone and run the development server:
 
 ```bash
+git clone https://github.com/eyyMinda/ratepunk-task-fe.git
+
+npm i
+
 npm run dev
 # or
 yarn dev
