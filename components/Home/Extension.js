@@ -1,27 +1,39 @@
+import css from '../../styles/pages/Home/Extension.module.scss';
 import Image from "next/image";
-import extensionStyles from '../../styles/pages/Home/Extension.module.scss';
-import { Icon } from '@iconify/react';
+import Link from "next/link";
+import Stars from "../UI/stars";
 
 function Extension({ styles }) {
+  const apps = [
+    {
+      id: 1,
+      image: "/chrome.svg",
+      link: "https://chrome.google.com/webstore/detail/ratepunk-same-hotel-way-c/gdaioanblcnghddimngklkhgcbomfdck?utm_source=ratepunk",
+      name: "chrome web store"
+    },
+    {
+      id: 2,
+      image: "/apple.svg",
+      link: "https://apps.apple.com/app/ratepunk/id1607823726",
+      name: "apple app store"
+    }
+  ]
+
   return (
-    <div id='extension' className={extensionStyles.app}>
-      <div className={extensionStyles.app_container}>
-        <a href='https://chrome.google.com/webstore/detail/ratepunk-same-hotel-way-c/gdaioanblcnghddimngklkhgcbomfdck?utm_source=ratepunk' className={extensionStyles.box}>
-          <Image src="/chrome.svg" alt="Chrome app store" width={60} height={60} layout={'fixed'} />
-          <div>
-            <small>available in the</small>
-            <b>chrome web store</b>
-          </div>
-        </a>
-        <a href='https://apps.apple.com/app/ratepunk/id1607823726' className={extensionStyles.box}>
-          <Image src="/apple.svg" alt="Apple app store" width={60} height={60} layout={'fixed'} />
-          <div>
-            <small>available in the</small>
-            <b>apple app store</b>
-          </div>
-        </a>
-        <div className={extensionStyles.rating}>
-          <div>{[...Array(5)].map((_, i) => <Icon className={extensionStyles.star} icon="ion:star" width="23" height="23" key={i} />)}</div>
+    <div id='extension' className={css.app}>
+      <div className={css.app_container}>
+        {apps.map(app =>
+          <Link href={app.link} key={app.id} className={css.box}>
+            <Image src={app.image} alt={app.name} width={60} height={60} />
+            <div>
+              <small>available in the</small>
+              <b>{app.name}</b>
+            </div>
+          </Link>
+        )}
+
+        <div className={css.rating}>
+          <Stars style={css.star} />
           <big>Chrome Store reviews</big>
         </div>
       </div>

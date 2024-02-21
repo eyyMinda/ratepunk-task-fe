@@ -1,22 +1,34 @@
 import Image from 'next/image';
-import footerStyles from '../styles/Footer.module.scss';
+import css from '../styles/Footer.module.scss';
+import Link from 'next/link';
+
+const socials = [
+  { src: '/instagram.svg', alt: 'instagram icon' },
+  { src: '/facebook.svg', alt: 'facebook icon' },
+  { src: '/linkedin.svg', alt: 'linkedin icon' },
+  { src: '/twitter.svg', alt: 'twitter icon' },
+  { src: '/tiktok.svg', alt: 'tiktok icon' },
+]
 
 function FooterContact() {
   return (
-    <div className={footerStyles.contacts}>
+    <div className={css.contacts}>
       <div>
         <h3>CONTACT</h3>
-        <Image src='/email-footer.svg' alt="email icon" width={16} height={12.8} />
-        <span> hi@ratepunk.com</span>
+        <div className={css.email}>
+          <Image src='/email-footer.svg' alt="email icon" width={16} height={16} />
+          <span>hi@ratepunk.com</span>
+        </div>
       </div>
+
       <div>
         <h3>SOCIAL</h3>
-        <ul className={footerStyles.socialBoxes}>
-          <li><a href='#'><Image src='/instagram.svg' alt="instagram icon" width={16} height={16} /></a></li>
-          <li><a href='#'><Image src='/facebook.svg' alt="facebook icon" width={16} height={16} /></a></li>
-          <li><a href='#'><Image src='/linkedin.svg' alt="linkedin icon" width={16} height={16} /></a></li>
-          <li><a href='#'><Image src='/twitter.svg' alt="twitter icon" width={16} height={16} /></a></li>
-          <li><a href='#'><Image src='/tiktok.svg' alt="tiktok icon" width={16} height={16} /></a></li>
+        <ul className={css.socialBoxes}>
+          {socials.map(social =>
+            <li key={social.src}><Link href='#'>
+              <Image src={social.src} alt={social.alt} width={16} height={16} />
+            </Link></li>
+          )}
         </ul>
       </div>
     </div>

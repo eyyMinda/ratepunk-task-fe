@@ -1,5 +1,5 @@
-@import 'z_variables';
-@import 'z_mixins';
+@import "z_variables";
+@import "z_mixins";
 
 .footer {
   background-color: $Cfooter;
@@ -29,7 +29,6 @@
       max-width: 544px;
       padding: 15px 0 0;
 
-
       p {
         margin: 32px 0 46px;
 
@@ -47,6 +46,11 @@
         padding-bottom: 0px;
         min-height: auto;
         margin-bottom: 24px;
+      }
+
+      .email {
+        @include flex();
+        gap: 5px;
       }
 
       .socialBoxes {

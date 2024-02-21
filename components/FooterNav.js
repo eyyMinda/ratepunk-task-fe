@@ -1,25 +1,16 @@
-import navStyles from '../styles/Nav.module.scss';
+import Link from 'next/link';
+import css from '../styles/Nav.module.scss';
 
 function FooterNav() {
   return (
-    <nav className={navStyles.footerNav}>
+    <nav className={css.footerNav}>
       <h3>QUICK LINKS</h3>
       <ul>
-        <li>
-          <a href='#'>Price Comparison</a>
-        </li>
-        <li>
-          <a href='#extension'>Chrome Extension</a>
-        </li>
-        <li>
-          <a href='#'>How It Works</a>
-        </li>
-        <li>
-          <a href='#'>Ratepunk Blog</a>
-        </li>
-        <li>
-          <a href='#'>Privacy Policy</a>
-        </li>
+        <li><Link href='#'>Price Comparison</Link></li>
+        <li><Link href='#extension'>Chrome Extension</Link></li>
+        <li><Link href='#'>How It Works</Link></li>
+        <li><Link href='#'>Ratepunk Blog</Link></li>
+        <li><Link href='#'>Privacy Policy</Link></li>
       </ul>
     </nav >
   )
