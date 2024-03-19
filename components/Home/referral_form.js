@@ -16,7 +16,7 @@ export default function ReferralForm() {
 
     const res = await fetch('api/get_referral', {
       method: "POST",
-      body: lastEmail
+      body: JSON.stringify({ lastEmail })
     });
     const { code, message } = await res.json();
 
