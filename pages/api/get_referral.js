@@ -4,7 +4,7 @@ import axios from "axios";
 const handler = async (req, res) => {
   if (req.method !== "POST") res.status(404).send("Cannot access an API page.");
   const jsonbin = process.env.NEXT_PUBLIC_JSONBIN_URI
-  const keyFirst = "$2b$10$7aVmVzUhEWgpa7IxiTztfO";
+  const keyFirst = "$2b$10$7aVmVzUhEWgpa7IxiTztfO"; //temp fix for bug: unable to generate this part of code from env 'reason: ???
   const axiosHeaders = {
     headers: {
       "Content-Type": "application/json",
